@@ -46,7 +46,7 @@ public class MyArrayList<E> implements MyArrayLIstInterface<E> {
 
     public int indexOf (E e){
         for (int i = 0; i < values.length; i++) {
-            if (values[i] == e)
+            if (values[i].equals(e))
                 return i;
         }
         return -1;

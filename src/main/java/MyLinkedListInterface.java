@@ -3,5 +3,5 @@ public interface MyLinkedListInterface<E> {
     void addFirst(E e);
     int size();
     E getElementByIndex(int counter);
-    E getIndexByElement(E e);
+    int getIndexByElement(E e);
 }

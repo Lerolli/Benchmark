@@ -2,6 +2,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class main {
 
@@ -23,20 +25,24 @@ public class main {
 
         arrays.fillArrayList(str);
         var countFindNumberArrayList = arrays.countFindNumberArrayList("тогда");
+        System.out.println(countFindNumberArrayList);
 
         arrays.fillLinkedList(str);
         var countFindNumberLinkedList = arrays.countFindNumberLinkedList("тогда");
+        System.out.println(countFindNumberLinkedList);
 
         arrays.fillHashMap(str);
         var countFindNumberHashMap = arrays.countFindNumberHashMap("тогда");
+        System.out.println(countFindNumberHashMap);
 
         arrays.fillMyArrayList(str);
         var countFindMyArrayList = arrays.countFindNumberMyArrayList("тогда");
-
-        System.out.println(countFindNumberArrayList);
-        System.out.println(countFindNumberLinkedList);
-        System.out.println(countFindNumberHashMap);
         System.out.println(countFindMyArrayList);
+
+        arrays.fillMyLinkedList(str);
+        var countFindMyLinkedList = arrays.countFindNumberMyLinkedList("тогда");
+        System.out.println(countFindMyLinkedList);
+
 
     }
 }
