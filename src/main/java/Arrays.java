@@ -10,6 +10,12 @@ public class Arrays {
     LinkedList<Integer> linkedListNumber;
 
     HashMap<String, Integer> hashMap;
+
+    MyArrayList<String> myArrayListString;
+    MyArrayList<Integer> myArrayListNumber;
+
+    MyLinkedList<String> myLinkedListString;
+    MyLinkedList<Integer> myLinkedListNumber;
     public Arrays(){
         arrayListString = new ArrayList<>();
         arrayListNumber = new ArrayList<>();
@@ -18,6 +24,12 @@ public class Arrays {
         linkedListNumber = new LinkedList<>();
 
         hashMap = new HashMap<>();
+
+        myArrayListString = new MyArrayList<>();
+        myArrayListNumber = new MyArrayList<>();
+
+        myLinkedListString = new MyLinkedList<>();
+        myLinkedListNumber = new MyLinkedList<>();
     }
 
     public void fillArrayList(String str){
@@ -81,5 +93,27 @@ public class Arrays {
         if (result == null)
             return 0;
         return result;
+    }
+
+    public void fillMyArrayList(String str){
+        var arrayString = str.split("[ \n\r\t]");
+        for (String string : arrayString) {
+            var index = myArrayListString.indexOf(string);
+            if (index != -1) {
+                myArrayListNumber.update(index, myArrayListNumber.get(index) + 1);
+            } else {
+                myArrayListString.add(string);
+                myArrayListNumber.add(1);
+            }
+
+        }
+    }
+
+    public int countFindNumberMyArrayList(String str){
+        var index = myArrayListString.indexOf(str);
+        if (index != -1) {
+            return myArrayListNumber.get(index);
+        }
+        return 0;
     }
 }

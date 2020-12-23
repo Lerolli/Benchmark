@@ -1,6 +1,27 @@
-import java.util.*;
+public class MyLinkedList<E> implements MyLinkedListInterface<E> {
 
-public class MyLinkedList implements List {
+    private Node<E> firstNode;
+    private Node<E> lastNode;
+    private int size;
+
+    public MyLinkedList(){
+        lastNode = new Node<>(null, firstNode, null);
+        firstNode = new Node<>(null, null, lastNode);
+
+    }
+
+
+    @Override
+    public void addLast(E e) {
+        Node<E> prev = lastNode;
+        prev.setCurrentElement(e);
+        lastNode = new Node<E>(null, prev, null);
+    }
+
+    @Override
+    public void addFirst(E e) {
+
+    }
 
     @Override
     public int size() {
@@ -8,112 +29,48 @@ public class MyLinkedList implements List {
     }
 
     @Override
-    public boolean isEmpty() {
-        return false;
-    }
-
-    @Override
-    public boolean contains(Object o) {
-        return false;
-    }
-
-    @Override
-    public Iterator iterator() {
+    public E getElementByIndex(int counter) {
         return null;
     }
 
     @Override
-    public Object[] toArray() {
-        return new Object[0];
-    }
-
-    @Override
-    public boolean add(Object o) {
-        return false;
-    }
-
-    @Override
-    public boolean remove(Object o) {
-        return false;
-    }
-
-    @Override
-    public boolean addAll(Collection c) {
-        return false;
-    }
-
-    @Override
-    public boolean addAll(int index, Collection c) {
-        return false;
-    }
-
-    @Override
-    public void clear() {
-
-    }
-
-    @Override
-    public Object get(int index) {
+    public E getIndexByElement(E e) {
         return null;
     }
 
-    @Override
-    public Object set(int index, Object element) {
-        return null;
-    }
+    private class Node<E>{
+        private E currentElement;
+        private Node<E> previousElement;
+        private Node<E> nextElement;
 
-    @Override
-    public void add(int index, Object element) {
+        private Node(E currentElement, Node<E> previousElement, Node<E> nextElement){
+            this.currentElement = currentElement;
+            this.previousElement = previousElement;
+            this.nextElement = nextElement;
+        }
+        public E getCurrentElement(){
+            return currentElement;
+        }
 
-    }
+        public void setCurrentElement (E currentElement){
+            this.currentElement = currentElement;
+        }
 
-    @Override
-    public Object remove(int index) {
-        return null;
-    }
+        public Node<E> getNextElement(){
+            return nextElement;
+        }
 
-    @Override
-    public int indexOf(Object o) {
-        return 0;
-    }
+        public void setNextElement(Node<E> nextElement){
+            this.nextElement = nextElement;
+        }
 
-    @Override
-    public int lastIndexOf(Object o) {
-        return 0;
-    }
+        public Node<E> getPreviousElement(){
+            return previousElement;
+        }
 
-    @Override
-    public ListIterator listIterator() {
-        return null;
-    }
+        public void setPreviousElement(Node<E> previousElement){
+            this.previousElement = previousElement;
+        }
 
-    @Override
-    public ListIterator listIterator(int index) {
-        return null;
-    }
-
-    @Override
-    public List subList(int fromIndex, int toIndex) {
-        return null;
-    }
-
-    @Override
-    public boolean retainAll(Collection c) {
-        return false;
-    }
-
-    @Override
-    public boolean removeAll(Collection c) {
-        return false;
-    }
-
-    @Override
-    public boolean containsAll(Collection c) {
-        return false;
-    }
-
-    @Override
-    public Object[] toArray(Object[] a) {
-        return new Object[0];
     }
 }

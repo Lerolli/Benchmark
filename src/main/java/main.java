@@ -6,6 +6,7 @@ import java.nio.file.Paths;
 public class main {
 
     public static void main(String[] args) {
+
         //Берем строки из файла и переводим в одну строку
         StringBuilder sb = new StringBuilder();
         try (BufferedReader reader = Files.newBufferedReader(Paths.get("C:\\Users\\zahar\\IdeaProjects\\Benchmark\\src\\main\\warandpiece.txt"))) {
@@ -29,9 +30,13 @@ public class main {
         arrays.fillHashMap(str);
         var countFindNumberHashMap = arrays.countFindNumberHashMap("тогда");
 
+        arrays.fillMyArrayList(str);
+        var countFindMyArrayList = arrays.countFindNumberMyArrayList("тогда");
+
         System.out.println(countFindNumberArrayList);
         System.out.println(countFindNumberLinkedList);
         System.out.println(countFindNumberHashMap);
+        System.out.println(countFindMyArrayList);
 
     }
 }
